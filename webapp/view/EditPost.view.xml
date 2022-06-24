@@ -5,6 +5,47 @@
 	displayBlock="true"
 	height="100%"
 	busyIndicatorDelay="0"
->
-    <Button text="돌아가기" press="onNavBack" />
+	xmlns:f="sap.ui.layout.form">
+	<Page
+		id="page"
+		showHeader="true" >
+		<customHeader>
+			<Bar>
+				<contentRight>
+					<Button id="edit" text="Edit" enabled="true" />
+					<Button id="cancel" text="Cancel" press="onNavBack" />
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormChange354"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="게시글 등록"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="Id" />
+				<Input id="name" value="{SupplierName}" />
+				<Label text="Title" />
+				<Input value="{Street}">
+				</Input>
+				<Label text="content" />
+				<Input value="{ZIPCode}">
+				</Input>
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
+	</Page>
 </mvc:View>
