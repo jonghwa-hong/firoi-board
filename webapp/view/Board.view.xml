@@ -1,0 +1,80 @@
+<mvc:View controllerName="board.controller.Board"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+        	<Table id="hongTable"
+                    width="auto"
+                    class="sapUiSmallMarginBeginEnd"
+						items="{
+							path: 'tableModel>/'
+						}">
+						<headerToolbar>
+							<OverflowToolbar>
+                            <Title text="Board" level="H2"/>
+                            <Breadcrumbs id="breadcrumb" />
+					        <ToolbarSpacer/>
+								<content>
+                                    <Button text="등록" press="onPress" />
+								</content>
+							</OverflowToolbar>
+						</headerToolbar>
+						<columns>
+							<Column width="12em">
+								<Text text="ID"/>
+							</Column>
+							<Column
+								minScreenWidth="Tablet"
+								demandPopin="true"
+							>
+								<Text text="TITLE"/>
+							</Column>
+							<Column
+								minScreenWidth="Desktop"
+								demandPopin="true"
+								hAlign="End"
+							>
+								<Text text="COTNENT"/>
+							</Column>
+							<Column hAlign="End">
+								<Text text="CREATE"/>
+							</Column>
+							<Column
+								minScreenWidth="Desktop"
+								demandPopin="true"
+								hAlign="Center"
+							>
+								<Text text="USERNAME"/>
+							</Column>
+							<Column hAlign="Center">
+								<Text text="LAST USER"/>
+							</Column>
+							<Column hAlign="Center">
+								<Text text="LAST CHANGED"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem vAlign="Middle">
+								<cells>
+									<Text text="{tableModel>id}"/>
+									<Text text="{tableModel>title}"/>
+									<Text text="{tableModel>content}"/>
+									<Text text="{
+										path : 'tableModel>createdAt',
+										type : 'sap.ui.model.type.Date',
+										formatOptions: {
+											style : 'long'
+										}
+									}" />
+									<Text text="{tableModel>createdBy}"/>
+									<Text text="{
+										path: 'tableModel>last_changed_at',
+										type: 'sap.ui.model.type.Date',
+										formatOptions: {
+											style: 'medium'
+										}
+									}" />
+									<Text text="{tableModel>last_changed_by}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+</mvc:View>

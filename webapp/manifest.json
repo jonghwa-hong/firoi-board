@@ -1,0 +1,133 @@
+{
+  "_version": "1.28.0",
+  "sap.app": {
+    "id": "board",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap-ux/fiori-freestyle-writer:basic",
+      "version": "0.11.15",
+      "toolsId": "78f747a3-1a45-42ab-928e-29b6045b9c26"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZUI_C_BOARD_HONG/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "config": {
+      "fullWidth": true
+    },
+    "dependencies": {
+      "minUI5Version": "1.84.7",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "board.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "board.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "Board",
+          "pattern": "",
+          "target": [
+            "Board"
+          ]
+        },
+        {
+          "name": "postBoard",
+          "pattern": "newpost",
+          "target": [
+            "editPost"
+          ]
+        }
+      ],
+      "targets": {
+        "Board": {
+          "viewId": "Board",
+          "viewName": "Board"
+        },
+        "editPost": {
+          "viewId": "EditPost",
+          "viewName": "EditPost"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "board.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    }
+  }
+}
