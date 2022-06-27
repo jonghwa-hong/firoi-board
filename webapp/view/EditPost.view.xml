@@ -12,13 +12,13 @@
 		<customHeader>
 			<Bar>
 				<contentRight>
-					<Button id="edit" text="Edit" enabled="true" />
+					<Button id="edit" text="Post" press="post" />
 					<Button id="cancel" text="Cancel" press="onNavBack" />
 				</contentRight>
 			</Bar>
 		</customHeader>
 		<VBox class="sapUiSmallMargin">
-		<f:SimpleForm id="SimpleFormChange354"
+		<f:SimpleForm id="boardData"
 			editable="true"
 			layout="ResponsiveGridLayout"
 			title="게시글 등록"
@@ -37,13 +37,11 @@
 			singleContainerFullSize="false" >
 			<f:content>
 				<Label text="Id" />
-				<Input id="name" value="{SupplierName}" />
+				<Input id="id" value="{id}" />
 				<Label text="Title" />
-				<Input value="{Street}">
-				</Input>
+				<Input id="title" value="{title}"/>
 				<Label text="content" />
-				<Input value="{ZIPCode}">
-				</Input>
+				<Input id="content" value="{content}"/>
 			</f:content>
 		</f:SimpleForm>
 	</VBox>
