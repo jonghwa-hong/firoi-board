@@ -5,7 +5,7 @@
                     width="auto"
                     class="sapUiSmallMarginBeginEnd"
 						items="{
-							path: 'tableModel>/'
+							path: '/BoardHong'
 						}">
 						<headerToolbar>
 							<OverflowToolbar>
@@ -24,16 +24,17 @@
 							<Column
 								minScreenWidth="Tablet"
 								demandPopin="true"
+								hAlign="Center"
 							>
 								<Text text="TITLE"/>
 							</Column>
-							<Column
+							<!-- <Column
 								minScreenWidth="Desktop"
 								demandPopin="true"
 								hAlign="End"
 							>
 								<Text text="COTNENT"/>
-							</Column>
+							</Column> -->
 							<Column hAlign="End">
 								<Text text="CREATE"/>
 							</Column>
@@ -44,17 +45,36 @@
 							>
 								<Text text="USERNAME"/>
 							</Column>
-							<Column hAlign="Center">
+							<!-- <Column hAlign="Center">
 								<Text text="LAST USER"/>
 							</Column>
 							<Column hAlign="Center">
 								<Text text="LAST CHANGED"/>
-							</Column>
+							</Column> -->
 						</columns>
 						<items>
-							<ColumnListItem vAlign="Middle">
+							<ColumnListItem type="Active" vAlign="Middle" press="onNavDetailPage">
 								<cells>
-									<Text text="{tableModel>id}"/>
+									<!-- <Text text="{id}"/> -->
+									<Text text="{title}"/>
+									<Text text="{content}"/>
+									<Text text="{
+										path : 'createdAt',
+										type : 'sap.ui.model.type.Date',
+										formatOptions: {
+											style : 'long'
+										}
+									}" />
+									<Text text="{createdBy}"/>
+									<Text text="{
+										path: 'last_changed_at',
+										type: 'sap.ui.model.type.Date',
+										formatOptions: {
+											style: 'medium'
+										}
+									}" />
+									<Text text="{last_changed_by}"/>
+									<!-- <Text text="{tableModel>id}"/>
 									<Text text="{tableModel>title}"/>
 									<Text text="{tableModel>content}"/>
 									<Text text="{
@@ -72,7 +92,7 @@
 											style: 'medium'
 										}
 									}" />
-									<Text text="{tableModel>last_changed_by}"/>
+									<Text text="{tableModel>last_changed_by}"/> -->
 								</cells>
 							</ColumnListItem>
 						</items>

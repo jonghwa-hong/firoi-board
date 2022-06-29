@@ -45,6 +45,7 @@
   },
   "sap.ui5": {
     "flexEnabled": true,
+        "handleValidation": true,
     "config": {
       "fullWidth": true
     },
@@ -110,6 +111,13 @@
           "target": [
             "editPost"
           ]
+        },
+        {
+          "name": "detailBoard",
+          "pattern": "post",
+          "target": [
+            "detailPost"
+          ]
         }
       ],
       "targets": {
@@ -120,6 +128,10 @@
         "editPost": {
           "viewId": "EditPost",
           "viewName": "EditPost"
+        },
+        "detailPost": {
+          "viewId": "DetailPost",
+          "viewName": "DetailPost"
         }
       }
     },

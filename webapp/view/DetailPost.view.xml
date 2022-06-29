@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="board.controller.EditPost"
+	controllerName="board.controller.DetailPost"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"
 	displayBlock="true"
@@ -12,8 +12,8 @@
 		<customHeader>
 			<Bar>
 				<contentRight>
-					<Button id="edit" text="Post" press="post" />
-					<Button id="cancel" text="Cancel" press="onNavBack" />
+					<!-- <Button id="edit" text="Post" press="post" />
+					<Button id="cancel" text="Cancel" press="onNavBack" /> -->
 				</contentRight>
 			</Bar>
 		</customHeader>
@@ -21,7 +21,7 @@
 		<f:SimpleForm id="simpleForm"
 			editable="true"
 			layout="ResponsiveGridLayout"
-			title="게시글"
+			title="게시글👍👍👍"
 			labelSpanXL="3"
 			labelSpanL="3"
 			labelSpanM="3"

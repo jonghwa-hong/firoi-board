@@ -8,7 +8,6 @@ sap.ui.define([
 	return Controller.extend("board.controller.EditPost", {
         onInit() {
             this.oModel = this.getOwnerComponent().getModel();
-
         },
 
         onNavBack: function (oEvt) {
@@ -21,7 +20,9 @@ sap.ui.define([
             id: Number(this.byId('id').getValue()),
             title: this.byId('title').getValue(),
             content: this.byId('content').getValue()
-        };
+          };
+          debugger;
+          return;
           console.log(oData);
           this.oModel.create("/BoardHong", oData, {
               async: true,
@@ -34,7 +35,7 @@ sap.ui.define([
             },
           });
 
-        }
+       }
 
 	});
 });
