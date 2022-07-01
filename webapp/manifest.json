@@ -114,7 +114,7 @@
         },
         {
           "name": "detailBoard",
-          "pattern": "post",
+          "pattern": "post/:postId:",
           "target": [
             "detailPost"
           ]

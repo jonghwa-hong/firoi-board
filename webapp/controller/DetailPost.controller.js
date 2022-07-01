@@ -6,5 +6,14 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("board.controller.DetailPost", {
+
+		onNavBack: function() {
+			console.log(1);
+			this.getOwnerComponent().getRouter().navTo('Board');
+		},
+
+		post: function() {
+			
+		}
 	});
 });

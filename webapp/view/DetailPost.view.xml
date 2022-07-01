@@ -12,8 +12,7 @@
 		<customHeader>
 			<Bar>
 				<contentRight>
-					<!-- <Button id="edit" text="Post" press="post" />
-					<Button id="cancel" text="Cancel" press="onNavBack" /> -->
+					<Button id="cancel" text="Cancel" press="onNavBack" />
 				</contentRight>
 			</Bar>
 		</customHeader>

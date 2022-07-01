@@ -15,8 +15,10 @@ sap.ui.define([
 
             onNavDetailPage: function(oEvt) {
               console.log(oEvt.getSource());
-              this.getOwnerComponent().getRouter().navTo('detailBoard');
+              const sPostId = oEvt.getSource().getBindingContext().getProperty("id");
+              this.getOwnerComponent().getRouter().navTo('detailBoard', {postId: sPostId}, true);
             },
+
 
             addBreadCrumb : function (oBreadCrumb) {
                 const oLink = new Link({
